@@ -1,12 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'pipeForTest'
+  name: 'pipeForTest',
 })
 export class PipeForTestPipe implements PipeTransform {
-
-  transform(value: any, args?: any): any {
-    return null;
+  transform(value: string): number {
+    return isNaN(Number(value)) ? 0 : Number(value);
   }
-
 }
